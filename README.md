@@ -9,6 +9,10 @@ A trial to have fun with json, golang, cobra and viper.
 
 TODO : play with .ufolder.yaml lang var to make an i18n app see [here](https://github.com/rnek0/ufolder/blob/857d97725cd09f625d30740c54e062d6285c1090/cmd/deserialize.go#L30)
 
+WARNING!!!  
+This is a nice code lab, it's possible that there's some really bad-smelling code, or at least that it's not very clean. You can find dead code in lots of places, I'd say it's Halloween code. 🎃     
+We're having so much fun!
+
 Enjoy.
 
 ```bash

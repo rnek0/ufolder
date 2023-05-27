@@ -28,6 +28,7 @@ type GnuFolder struct {
 // GetLocale gets the locale lang user.
 // Return fr-FR if err.
 func GetLocale() (string, error) {
+	// TODO: check if lang is defined in .ufolder.yaml !
 	locale, err := jibber_jabber.DetectIETF()
 	if err != nil {
 		locale = "fr-FR"
