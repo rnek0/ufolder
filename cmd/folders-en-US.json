@@ -1,0 +1,98 @@
+[
+        {
+            "folder":"/",
+            "info":"est le dossier racine du système Gnu-Linux.",
+            "description":" C'est à partir de cette racine que sont montés tous les autres repertoires."
+        },
+        {
+            "folder":"bin",
+            "info":"contient les commandes exécutables utilisateur (binaires).",
+            "description":" Le dossier /bin contient des programmes (exécutables) susceptibles d’être utilisés par tous les utilisateurs de la machine.\n Le dossier bin est l'un des nombreux dossiers typiques contenant des fichiers binaires, \n tous des programmes utilisés à partir de la ligne de commande bash.\n La seule chose qui distingue le dossier bin des autres est qu'il semblerait que de nombreux fichiers\n binaires dans ce dossier semblent être très importants en ce qui concerne le démarrage et l'utilisation\n de Linux lui-même. Sans le dossier bin, il n'y aurait aucun moyen qu'il y ait un système de fonctions,\n cependant de nombreux fichiers binaires dans d'autres dossiers tels que le dossier /usr/sbin/ ne seraient\n pas si critiques pour le fonctionnement de Linux lui-même.\n"
+        },
+        {
+            "folder":"boot",
+            "info":"contient les fichiers du gestionnaire de démarrage (bootloader).",
+            "description":" On trouve dans ce répertoire les éléments indispensables au démarrage de gnu-linux,\n comme le noyau ou la configuration de grub. "
+        },
+        {
+            "folder":"dev",
+            "info":"contient les fichiers des périphériques.",
+            "description":" Points d'accès aux péripheriques du système.\n Pour accèder au lecteur de disquettes par exemple, le noyau utilisera /dev/fd0 "
+        },
+        {
+            "folder":"etc",
+            "info":"contient les fichiers de configuration du système.",
+            "description":" - "
+        },
+        {
+            "folder":"root",
+            "info":"c'est le dossier de l'administrateur du système.",
+            "description":" - "
+        },
+        {
+            "folder":"home",
+            "info":"Contient les dossiers personnels des utilisateurs",
+            "description":" - "
+        },
+        {
+            "folder":"lib",
+            "info":"Contient les librairies partagées essentielles, modules du kernel",
+            "description":" - "
+        },
+        {
+            "folder":"media",
+            "info":"Contient les points de montage des périphériques amovibles",
+            "description":" - "
+        },
+        {
+            "folder":"mnt",
+            "info":"Contient les points de montage temporaires",
+            "description":" - "
+        },
+        {
+            "folder":"opt",
+            "info":"Contient les applications tierces",
+            "description":" - "
+        },
+        {
+            "folder":"proc",
+            "info":"Contient les informations sur les processus",
+            "description":" - "
+        },
+        {
+            "folder":"sbin",
+            "info":"Contient les executables système",
+            "description":" - "
+        },
+        {
+            "folder":"srv",
+            "info":"Contient les données des services de type serveur",
+            "description":" - "
+        },
+        {
+            "folder":"tmp",
+            "info":"Contient les fichiers temporaires",
+            "description":" - "
+        },
+        {
+            "folder":"var",
+            "info":"Contient les fichiers variables",
+            "description":" - "
+        },
+        {
+            "folder":"usr",
+            "info":"Contient les utilitaires et applications (multi)utilisateur",
+            "description":" - "
+        },
+        {
+            "folder":".",
+            "info":"est le répertoire où l'on se trouve.",
+            "description":" - "
+        },
+        {
+            "folder":"..",
+            "info":"est le \"dossier parent\" du dossier où l'on se trouve.",
+            "description":" - "
+        }
+    ]
+    
