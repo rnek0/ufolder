@@ -132,7 +132,8 @@ func deserialize() ([]GnuFolder, error) {
 	// ATTENTION !!! La definition de StrJsonfrFR est dans folders-fr-FR.go !!!
 	// Voir le problème d'install en local. Ou alors la solution sera d'aller chercher les infos sur le net,
 	// un peu comme le fait tldr avec github.
-	rawJson := json.Unmarshal([]byte(StrJsonfrFR), &gnuFolders)
+	rawJson := json.Unmarshal([]byte(StrJsonesES), &gnuFolders)
+	//rawJson := json.Unmarshal([]byte(StrJsonfrFR), &gnuFolders)
 	if rawJson != nil {
 		err := errors.New(" Faut voir ce qu'il se passe ici !!! ... ")
 		log.Printf("Problème de deserialization de : %s ", err)

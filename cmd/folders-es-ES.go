@@ -3,27 +3,27 @@ package cmd
 var StrJsonesES string = `[
         {
             "folder":"/",
-            "info":"est le dossier racine du système Gnu-Linux.",
+            "info":"Jerarquía primaria, la raíz o root del sistema Gnu-Linux.",
             "description":"est la racine de l'arborescence des fichiers, sur gnu-linux tout est fichier !!!. \n C'est à partir de cette racine que sont montés tous les autres repertoires."
         },
         {
             "folder":"bin",
-            "info":"contient les commandes exécutables utilisateur (binaires).",
-            "description":" Le dossier /bin contient des programmes (exécutables) susceptibles d’être utilisés par tous les utilisateurs de la machine.\n Le dossier bin est l'un des nombreux dossiers typiques contenant des fichiers binaires, \n tous des programmes utilisés à partir de la ligne de commande bash.\n La seule chose qui distingue le dossier bin des autres est qu'il semblerait que de nombreux fichiers\n binaires dans ce dossier semblent être très importants en ce qui concerne le démarrage et l'utilisation\n de Linux lui-même. Sans le dossier bin, il n'y aurait aucun moyen qu'il y ait un système de fonctions,\n cependant de nombreux fichiers binaires dans d'autres dossiers tels que le dossier /usr/sbin/ ne seraient\n pas si critiques pour le fonctionnement de Linux lui-même.\n"
+            "info":"Aplicaciones binarias de comando que son esenciales a una sesion de usuario.",
+            "description":" Aplicaciones binarias de comando que son esenciales para que estén disponibles para una sesión de usuario único, o bien, para todos los usuarios (multiusuario). Incluyen, por ejemplo, cat, ls, cp, rm, mkdir, etc...\n La seule chose qui distingue le dossier bin des autres est qu'il semblerait que de nombreux fichiers\n binaires dans ce dossier semblent être très importants en ce qui concerne le démarrage et l'utilisation\n de Linux lui-même. Sans le dossier bin, il n'y aurait aucun moyen qu'il y ait un système de fonctions,\n cependant de nombreux fichiers binaires dans d'autres dossiers tels que le dossier /usr/sbin/ ne seraient\n pas si critiques pour le fonctionnement de Linux lui-même.\n"
         },
         {
             "folder":"boot",
-            "info":"contient les fichiers du gestionnaire de démarrage (bootloader).",
+            "info":"Archivos cargadores de arranque (por ejemplo, los núcleos, el bootloader).",
             "description":"possède les éléments indispensables au démarrage de gnu-linux,\n comme le noyau ou la configuration de grub. "
         },
         {
             "folder":"dev",
-            "info":"contient les fichiers des périphériques.",
+            "info":"Contiene archivos especiales de bloques y caracteres asociados a dispositivos hardware.",
             "description":"fournit les fichiers qui sont des points d'accès aux péripheriques du système.\n Pour accèder au lecteur de disquettes par exemple, le noyau utilisera /dev/fd0 "
         },
         {
             "folder":"etc",
-            "info":"contient les fichiers de configuration du système.",
+            "info":"Contiene archivos de configuración del sistema específicos del Host de todo el sistema.",
             "description":" C'est ici que sont stockés les differents fichiers de configuration du système."
         },
         {
@@ -33,7 +33,7 @@ var StrJsonesES string = `[
         },
         {
             "folder":"home",
-            "info":"contient les dossiers personnels des utilisateurs.",
+            "info":"directorio que contiene los usuarios del sistéma.",
             "description":"contient le répertoire de $USER (l'utilisateur loggué dans la machine). \n C'est le repertoire principal où l'on trouve d'autres répertoires tels que Documents, Musique, Desktop etc... \n Qui sont personnels à chaque utilisateur."
         },
         {

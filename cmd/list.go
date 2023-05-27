@@ -6,9 +6,10 @@ import (
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-)
 
-//TODO: Corriger la longueur de l'entete et fin de tableau.
+	"text/tabwriter"
+	_ "text/tabwriter"
+)
 
 // datasColumn displays input in a column with 10 chars length
 func datasColumn(input string, size int) string {
@@ -57,8 +58,8 @@ func columnLenght(listeDossiers []GnuFolder) (int, int) {
 	longueurMax2 := 0
 
 	for i := 0; i < len(listeDossiers); i++ {
-		nbchars1 := len(listeDossiers[i].Info)
-		nbchars2 := len(listeDossiers[i].Folder)
+		nbchars1 := len(listeDossiers[i].Folder)
+		nbchars2 := len(listeDossiers[i].Info)
 
 		if nbchars1 > longueurMax1 {
 			longueurMax1 = nbchars1
@@ -68,6 +69,33 @@ func columnLenght(listeDossiers []GnuFolder) (int, int) {
 		}
 	}
 	return longueurMax1, longueurMax2
+}
+
+func displayResults(listeDossiers []GnuFolder) {
+	fmt.Printf("\n  -- Dossiers Gnu-Linux --")
+	// CALCUL DE LA TAILLE DE L'ENSEMBLE DU TABLEAU
+	left, right := columnLenght(listeDossiers)
+	//fmt.Printf(">>> colonne gauche  %d - colonne droite  %d - %d\n", left, right, 2)
+	lineTitle := line((left + 6 + right), '-')
+	fmt.Printf("\n  %s ", lineTitle)
+
+	// initialize tabwriter
+	w := new(tabwriter.Writer)
+
+	// minwidth, tabwidth, padding, padchar, flags
+	w.Init(os.Stdout, left, 8, 2, ' ', 0)
+
+	//defer
+
+	for i := 0; i < len(listeDossiers); i++ {
+		fmt.Fprintf(w, "\n | %s\t | %s \t%s\t", listeDossiers[i].Folder, listeDossiers[i].Info, "|")
+	}
+
+	w.Flush()
+
+	author = viper.GetString("app.author")
+	lineTitle = line((left + right), '-')
+	fmt.Printf("\n  %s%s ", lineTitle, author)
 }
 
 var listCmd = &cobra.Command{
@@ -89,53 +117,7 @@ var listCmd = &cobra.Command{
 			os.Exit(0)
 		}
 
-		// CALCUL DE LA TAILLE DE L'ENSEMBLE DU TABLEAU
-		left, right := columnLenght(listeDossiers)
-		fmt.Printf(">>> %d - %d - %d\n", left, right, 2)
-
-		lineTitle := line((left+right+2)-11, '-')
-		fmt.Printf("%s\n", lineTitle)
-		fmt.Printf("\n  -- Dossiers gnu-linux %s ", lineTitle)
-		//____________________________________
-		// TODO: extraire cette fonctionalité \
-		//---------------------------------------------------------------------------------
-
-		longueurMax := 0
-		maxRightLengthCol := 0
-		for i := 0; i < len(listeDossiers); i++ {
-			nbchars := len(listeDossiers[i].Info)
-			if nbchars > longueurMax {
-				maxRightLengthCol = nbchars
-				longueurMax = nbchars
-				//fmt.Println(maxRightLengthCol)
-			}
-		}
-		//fmt.Printf("La chaine plus grande A DROITE possède %d chars", maxRightLengthCol)
-		// TODO: extraire cette fonctionalité
-		longueurLeftMax := 0
-		maxLeftLengthCol := 0
-		for i := 0; i < len(listeDossiers); i++ {
-			nbchars := len(listeDossiers[i].Folder)
-			if nbchars > longueurLeftMax {
-				maxLeftLengthCol = nbchars
-				longueurLeftMax = nbchars
-				//fmt.Println(maxLeftLengthCol)
-			}
-		}
-		//fmt.Printf("La chaine plus grande A GAUCHE possède %d chars", maxLeftLengthCol)
-		//---------------------------------------------------------------------------------
-
-		for i := 0; i < len(listeDossiers); i++ {
-			left := datasColumn(listeDossiers[i].Folder, maxLeftLengthCol)
-			right := datasColumn(listeDossiers[i].Info, maxRightLengthCol)
-			end := datasColumn("\t|", 2)
-			//fmt.Printf("\n %s", left+right+end)
-			fmt.Printf("\n | %s | %s \t%s", GREEN+left+RESET, right, end)
-		}
-		author = "rnek0" //viper.GetString("app.author")
-		fmt.Printf("\n   -----------------------------------------------------------------------------%s--- ", author)
-		fmt.Printf("\n\n")
-		author = viper.GetString("app.author")
+		displayResults(listeDossiers)
 	},
 }
 
