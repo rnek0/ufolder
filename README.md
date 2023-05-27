@@ -7,6 +7,8 @@ Just a little reminder that is not in the man pages.
 
 A trial to have fun with json, golang, cobra and viper.
 
+TODO : play with .ufolder.yaml lang var to make an i18n app :D
+
 Enjoy.
 
 ```bash
