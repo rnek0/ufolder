@@ -1,4 +1,4 @@
-module git.sr.ht/~rnek0/ufolder
+module github.com/rnek0/ufolder
 
 go 1.19
 
