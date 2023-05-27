@@ -41,7 +41,7 @@ func datasColumn(input string, size int) string {
 
 // Return a line of n runes.
 //
-// n (int) lenght of line
+// n (int) length of line
 // c (rune) for line content.
 func line(n int, c rune) string {
 	result := ""
