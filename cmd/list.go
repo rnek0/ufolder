@@ -73,10 +73,10 @@ func columnLenght(listeDossiers []GnuFolder) (int, int) {
 // Displays the folder list table.
 //
 // Just the folder name and a brief description.
-func displayResults(listeDossiers []GnuFolder) {
+func displayResults(listeDossiers *[]GnuFolder) {
 	fmt.Printf("\n  ┏━ " + YELLOW + "Dossiers Gnu-Linux" + RESET + " ━┓")
 
-	left, right := columnLenght(listeDossiers)
+	left, right := columnLenght(*listeDossiers)
 
 	lineTitle := line((left + 6 + right), '━')
 	fmt.Printf("\n ┏%s┓", lineTitle)
@@ -87,8 +87,8 @@ func displayResults(listeDossiers []GnuFolder) {
 	// https://pkg.go.dev/text/tabwriter#Writer.Init
 	w.Init(os.Stdout, left, 8, 1, ' ', 0)
 
-	for i := 0; i < len(listeDossiers); i++ {
-		fmt.Fprintf(w, "\n ┃ %s\t ┃ %s \t%s", YELLOW+listeDossiers[i].Folder+RESET, listeDossiers[i].Info, "┃")
+	for i := 0; i < len(*listeDossiers); i++ {
+		fmt.Fprintf(w, "\n ┃ %s\t ┃ %s \t%s", YELLOW+(*listeDossiers)[i].Folder+RESET, (*listeDossiers)[i].Info, "┃")
 	}
 
 	w.Flush()
@@ -117,7 +117,7 @@ var listCmd = &cobra.Command{
 			os.Exit(0)
 		}
 
-		displayResults(listeDossiers)
+		displayResults(&listeDossiers)
 		fmt.Print("\n  More : https://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard \n")
 		fmt.Println()
 	},
