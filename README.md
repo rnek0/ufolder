@@ -44,5 +44,21 @@ Enjoy.
     - $ufolder info /
 ```
 
+## Tests
+
+Clone repo :  
+```bash
+git clone https://github.com/rnek0/ufolder
+```
+
+Go run: 
+```bash
+go run . list
+```
+
+Working...
+
+---
+
 ![GPL-v3](gplv3-with-text-136x68.png)  
  [License](https://www.gnu.org/licenses/gpl-howto.html)
