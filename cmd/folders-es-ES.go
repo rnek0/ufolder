@@ -8,8 +8,8 @@ var StrJsonesES string = `[
         },
         {
             "folder":"bin",
-            "info":"Aplicaciones binarias de comando que son esenciales a una sesion de usuario.",
-            "description":" Aplicaciones binarias de comando que son esenciales para que estén disponibles para una sesión de usuario único, o bien, para todos los usuarios (multiusuario). Incluyen, por ejemplo, cat, ls, cp, rm, mkdir, etc...\n La seule chose qui distingue le dossier bin des autres est qu'il semblerait que de nombreux fichiers\n binaires dans ce dossier semblent être très importants en ce qui concerne le démarrage et l'utilisation\n de Linux lui-même. Sans le dossier bin, il n'y aurait aucun moyen qu'il y ait un système de fonctions,\n cependant de nombreux fichiers binaires dans d'autres dossiers tels que le dossier /usr/sbin/ ne seraient\n pas si critiques pour le fonctionnement de Linux lui-même.\n"
+            "info":"Aplicaciones binarias de comando que son esenciales a una sesión de usuario.",
+            "description":" Aplicaciones binarias de comando que son esenciales para que estén disponibles para una sesión de usuario único, o bien, para todos los usuarios (multiusuario). Incluyen, por ejemplo, cat, ls, cp, rm, mkdir, etc..."
         },
         {
             "folder":"boot",
@@ -34,7 +34,7 @@ var StrJsonesES string = `[
         {
             "folder":"home",
             "info":"Directorio que contiene los usuarios del sistéma.",
-            "description":"contient le répertoire de $USER (l'utilisateur loggué dans la machine). \n C'est le repertoire principal où l'on trouve d'autres répertoires tels que Documents, Musique, Desktop etc... \n Qui sont personnels à chaque utilisateur."
+            "description":"contient le répertoire de $USER (l'utilisateur loggué dans la machine). C'est le repertoire principal où l'on trouve d'autres répertoires tels que Documents, Musique, Desktop etc... Qui sont personnels à chaque utilisateur."
         },
         {
             "folder":"lib",

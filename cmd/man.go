@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/mitchellh/go-wordwrap"
 	"github.com/spf13/cobra"
 )
 
@@ -40,14 +41,18 @@ var manCmd = &cobra.Command{
 		return err
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("\n"+YELLOW+" [ %s %s ]\n"+RESET, man.String(), folder)
+		fmt.Printf("\n"+YELLOW+"[ %s %s ]\n"+RESET, man.String(), folder)
 		//infos = wordwrap.WrapString(infos, 120)
 		// https://codereview.stackexchange.com/questions/244435/word-wrap-in-go
 		// https://github.com/mitchellh/go-wordwrap/blob/master/wordwrap.go
-		infos = WordWrap(infos, 90)
+		//infos = WordWrap(infos, 90)
 		//fmt.Println(coco)
-		fmt.Printf("\n%s\n", infos)
-		fmt.Printf("\n")
+		//fmt.Printf("\n%s\n", infos)
+		//fmt.Printf("\n")
+
+		wrapped := wordwrap.WrapString(infos, 80)
+		fmt.Println(wrapped)
+		fmt.Println()
 	},
 }
 

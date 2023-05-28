@@ -8,7 +8,6 @@ import (
 	"github.com/spf13/viper"
 
 	"text/tabwriter"
-	_ "text/tabwriter"
 )
 
 // datasColumn displays input in a column with 10 chars length
@@ -71,31 +70,32 @@ func columnLenght(listeDossiers []GnuFolder) (int, int) {
 	return longueurMax1, longueurMax2
 }
 
+// Displays the folder list table.
+//
+// Just the folder name and a brief description.
 func displayResults(listeDossiers []GnuFolder) {
-	fmt.Printf("\n  -- Dossiers Gnu-Linux --")
-	// CALCUL DE LA TAILLE DE L'ENSEMBLE DU TABLEAU
+	fmt.Printf("\n  ┏━ " + YELLOW + "Dossiers Gnu-Linux" + RESET + " ━┓")
+
 	left, right := columnLenght(listeDossiers)
-	//fmt.Printf(">>> colonne gauche  %d - colonne droite  %d - %d\n", left, right, 2)
-	lineTitle := line((left + 6 + right), '-')
-	fmt.Printf("\n  %s ", lineTitle)
+
+	lineTitle := line((left + 6 + right), '━')
+	fmt.Printf("\n ┏%s┓", lineTitle)
 
 	// initialize tabwriter
 	w := new(tabwriter.Writer)
 
-	// minwidth, tabwidth, padding, padchar, flags
-	w.Init(os.Stdout, left, 8, 2, ' ', 0)
-
-	//defer
+	// https://pkg.go.dev/text/tabwriter#Writer.Init
+	w.Init(os.Stdout, left, 8, 1, ' ', 0)
 
 	for i := 0; i < len(listeDossiers); i++ {
-		fmt.Fprintf(w, "\n | %s\t | %s \t%s\t", listeDossiers[i].Folder, listeDossiers[i].Info, "|")
+		fmt.Fprintf(w, "\n ┃ %s\t ┃ %s \t%s", YELLOW+listeDossiers[i].Folder+RESET, listeDossiers[i].Info, "┃")
 	}
 
 	w.Flush()
 
 	author = viper.GetString("app.author")
-	lineTitle = line((left + right), '-')
-	fmt.Printf("\n  %s%s ", lineTitle, author)
+	lineTitle = line((left + right - 1), '━')
+	fmt.Printf("\n ┗%s%s┛", lineTitle, author)
 }
 
 var listCmd = &cobra.Command{
@@ -118,7 +118,8 @@ var listCmd = &cobra.Command{
 		}
 
 		displayResults(listeDossiers)
-		fmt.Print("\n More : https://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard")
+		fmt.Print("\n  More : https://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard \n")
+		fmt.Println()
 	},
 }
 
