@@ -28,29 +28,13 @@ var manCmd = &cobra.Command{
 		}
 
 		folder = args[0]
-		folder, err = SanitizeQueryFolder(folder)
-		if err != nil {
-			fmt.Printf("Found SanitizeQueryFolder error :\n" + err.Error())
-		}
-
-		infos, err = GetFolderDatas(man.String(), folder)
-		if err != nil {
-			return err
-		}
+		folder, infos, err = RequestDatas(folder, man.String())
 
 		return err
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("\n"+YELLOW+"[ %s %s ]\n"+RESET, man.String(), folder)
-		//infos = wordwrap.WrapString(infos, 120)
-		// https://codereview.stackexchange.com/questions/244435/word-wrap-in-go
-		// https://github.com/mitchellh/go-wordwrap/blob/master/wordwrap.go
-		//infos = WordWrap(infos, 90)
-		//fmt.Println(coco)
-		//fmt.Printf("\n%s\n", infos)
-		//fmt.Printf("\n")
-
-		wrapped := wordwrap.WrapString(infos, 80)
+		fmt.Printf("\n"+YELLOW+"[ %s %s ]\n\n"+RESET, man.String(), folder)
+		wrapped := wordwrap.WrapString(infos, 100)
 		fmt.Println(wrapped)
 		fmt.Println()
 	},
