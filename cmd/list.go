@@ -118,6 +118,7 @@ var listCmd = &cobra.Command{
 		}
 
 		displayResults(listeDossiers)
+		fmt.Print("\n More : https://es.wikipedia.org/wiki/Filesystem_Hierarchy_Standard")
 	},
 }
 

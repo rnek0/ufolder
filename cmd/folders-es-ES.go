@@ -28,42 +28,42 @@ var StrJsonesES string = `[
         },
         {
             "folder":"root",
-            "info":"c'est le dossier de l'administrateur du système.",
+            "info":"Directorio del administrador del sistema.",
             "description":" - "
         },
         {
             "folder":"home",
-            "info":"directorio que contiene los usuarios del sistéma.",
+            "info":"Directorio que contiene los usuarios del sistéma.",
             "description":"contient le répertoire de $USER (l'utilisateur loggué dans la machine). \n C'est le repertoire principal où l'on trouve d'autres répertoires tels que Documents, Musique, Desktop etc... \n Qui sont personnels à chaque utilisateur."
         },
         {
             "folder":"lib",
-            "info":"contient les librairies partagées essentielles, modules du kernel.",
+            "info":"Bibliotecas esenciales compartidas de los programas alojados y módulos del kernel.",
             "description":" - "
         },
         {
             "folder":"media",
-            "info":"contient les points de montage des périphériques amovibles.",
+            "info":"Contiene los puntos de montaje de los medios extraíbles de almacenamiento.",
             "description":" - "
         },
         {
             "folder":"mnt",
-            "info":"contient les points de montage temporaires.",
+            "info":"Sistema de archivos montados temporalmente.",
             "description":" - "
         },
         {
             "folder":"opt",
-            "info":"contient les applications tierces.",
+            "info":"Programas opcionales de aplicaciones estáticas que pueden ser compartidas entre los usuarios.",
             "description":" - "
         },
         {
             "folder":"proc",
-            "info":"contient les informations sur les processus.",
+            "info":"Sistema de archivos virtuales que documentan al núcleo y el estado de los procesos.",
             "description":" - "
         },
         {
             "folder":"sbin",
-            "info":"contient les executables système.",
+            "info":"Sistema de binarios esencial, comandos y programas exclusivos del superusuario (root).",
             "description":" - "
         },
         {
@@ -73,27 +73,27 @@ var StrJsonesES string = `[
         },
         {
             "folder":"tmp",
-            "info":"contient les fichiers temporaires.",
+            "info":"Aquí generalmente se guardan los archivos temporales guardados por apps.",
             "description":" - "
         },
         {
             "folder":"var",
-            "info":"contient les fichiers variables.",
+            "info":"Archivos variables, tales como logs, archivos spool, bases de datos, archivos de correo electrónico temporales.",
             "description":" - "
         },
         {
             "folder":"usr",
-            "info":"contient les utilitaires et applications (multi)utilisateur.",
+            "info":"Contiene la mayoría de las utilidades y aplicaciones multiusuario.",
             "description":" - "
         },
         {
             "folder":".",
-            "info":"est le répertoire où l'on se trouve.",
+            "info":"Directorio actual.",
             "description":"represente le répertoire actuel. Il s'agit d'un alias du repertoir que l'on trouve\n avec la commande $pwd ; on doit le representer lorsque l'on veut executer un programme situé où nous sommes (./programme)\n Ceci a fin de ne pas confondre avec un programme qui serait situé dans le $PATH "
         },
         {
             "folder":"..",
-            "info":"est le \"dossier parent\" du dossier où l'on se trouve.",
+            "info":"Directorio de nivel superior al actual.",
             "description":"represente le répertoire (parent), c'est le dossier qui contiens notre dossier dans l'arborescence.\n Ce repertoire ne se voit que si on passe le flag 'a' à la commande ls. \n Les repertoires qui commencent par un point dont cachés par definition.  "
         }
     ]
