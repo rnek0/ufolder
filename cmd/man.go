@@ -33,7 +33,7 @@ var manCmd = &cobra.Command{
 		return err
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Printf("\n"+YELLOW+"[ %s %s ]\n\n"+RESET, man.String(), folder)
+		fmt.Printf("\n"+YELLOW+"[ %s %s ]\n"+RESET, man.String(), folder)
 		wrapped := wordwrap.WrapString(infos, 100)
 		fmt.Println(wrapped)
 		fmt.Println()
@@ -41,12 +41,19 @@ var manCmd = &cobra.Command{
 }
 
 func init() {
-
+	var appBanner string = fmt.Sprintf(`
+	.==========.
+	|  .==========.  
+	| /           /  %[1]s  
+	|/           /   %[2]s
+	.===========.    `, GREEN+"ufolder"+RESET, GRAY+"Dossiers de l'arborescence Gnu-Linux."+RESET)
 	manCmd.SetHelpFunc(func(c *cobra.Command, s []string) {
-		fmt.Printf("\n "+GREEN+" Aide %s %s\033[m"+RESET+" :", "ufolder", manCmd.Name())
+
+		fmt.Printf("%s", appBanner)
+		fmt.Printf("\n\n\t"+GRAY+"Aide \n\t"+GREEN+"[ %s %s ]\033[m"+RESET+" ", "ufolder", manCmd.Name())
 		fmt.Printf("\n\tVous devez passer le "+BOLD+"<nom du dossier>"+RESET+" en argument à la commande %s.", manCmd.Name())
-		fmt.Printf("\n\tExemple (avec le dossier root) :")
-		fmt.Printf("\n\t"+BOLD+"$ufolder %s root"+RESET, manCmd.Name())
+		fmt.Printf("\n\n\tExemple (avec le dossier root) :")
+		fmt.Printf("\n\t"+BOLD+"$ufolder %s /root"+RESET, manCmd.Name())
 		fmt.Printf("\n\n")
 	})
 

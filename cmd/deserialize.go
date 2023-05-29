@@ -145,11 +145,11 @@ func deserialize() ([]GnuFolder, error) {
 	return gnuFolders, nil
 }
 
-// GetFolderDatas returns information about GnuFolder struct.
+// getFolderDatas returns information about GnuFolder struct.
 //
 // info (string) : short description.
 // man  (string) : long description.
-func GetFolderDatas(cmd, arg string) (string, error) {
+func getFolderDatas(cmd, arg string) (string, error) {
 	var gnuFolders []GnuFolder
 
 	// TODO : Doing i18n with error messages !!!
@@ -197,7 +197,7 @@ func RequestDatas(folder string, what string) (string, string, error) {
 	}
 
 	// Get datas
-	infos, err = GetFolderDatas(what, folder)
+	infos, err = getFolderDatas(what, folder)
 	if err != nil {
 		return "", "", err
 	}

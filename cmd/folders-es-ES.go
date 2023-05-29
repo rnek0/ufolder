@@ -29,17 +29,17 @@ var StrJsonesES string = `[
         {
             "folder":"/root",
             "info":"Directorio del administrador del sistema.",
-            "description":" - "
+            "description":"El directorio /root se trata de un directorio variable no compartible. El directorio /root es el directorio /home del administrador del sistema (usuario root)."
         },
         {
             "folder":"/home",
-            "info":"Directorio que contiene los usuarios del sistéma.",
+            "info":"Directorio que contiene los usuarios del sistema.",
             "description":"El directorio /home se trata de un directorio variable y compartible. Este directorio está destinado a alojar la totalidad de archivos personales de los distintos usuarios del sistema operativo a excepción del usuario root. Algunos de los archivos personales almacenados en la carpeta /home son fotografías, documentos de ofimática, vídeos, etc."
         },
         {
             "folder":"/lib",
             "info":"Bibliotecas esenciales compartidas de los programas alojados y módulos del kernel.",
-            "description":" - "
+            "description":"El directorio /lib es un directorio estático y que puede ser compartible. \nEste directorio contiene bibliotecas compartidas que son necesarias para arrancar los ejecutables que se almacenan en los directorios /bin y /sbin."
         },
         {
             "folder":"/media",

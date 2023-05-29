@@ -56,20 +56,27 @@ Exemple: $ufolder info bin
 			infos = "n'est pas dans l'arborescence initiale de gnu-linux."
 		}
 
-		fmt.Printf(""+GREEN+"\n"+BOLD+"[info %s] : "+RESET+"%s\n", folder, infos)
+		fmt.Printf(""+GREEN+"\n"+BOLD+"[ info %s ] : "+RESET+"\n%s\n", folder, infos)
 		fmt.Printf("\n")
 
 	},
 }
 
 func init() {
-
+	var appBanner string = fmt.Sprintf(`
+	.==========.
+	|  .==========.  
+	| /           /  %[1]s  
+	|/           /   %[2]s
+	.===========.    `, GREEN+"ufolder"+RESET, GRAY+"Dossiers de l'arborescence Gnu-Linux."+RESET)
 	// Help on command.
 	infoCmd.SetHelpFunc(func(c *cobra.Command, s []string) {
-		fmt.Printf("\n "+GREEN+" Aide %s %s\033[m"+RESET+" :", "ufolder", infoCmd.Name())
+
+		fmt.Printf("%s", appBanner)
+		fmt.Printf("\n\n\t"+GRAY+"Aide \n\t"+GREEN+"[ %s %s ]\033[m"+RESET+"", "ufolder", infoCmd.Name())
 		fmt.Printf("\n\tVous devez passer le "+BOLD+"<nom du dossier>"+RESET+" en argument à la commande %s.", infoCmd.Name())
-		fmt.Printf("\n\tExemple (avec le dossier root) :")
-		fmt.Printf("\n\t" + BOLD + "$ufolder info root" + RESET)
+		fmt.Printf("\n\n\tExemple (avec le dossier root) :")
+		fmt.Printf("\n\t" + BOLD + "$ufolder info /root" + RESET)
 		fmt.Printf("\n\n")
 	})
 
