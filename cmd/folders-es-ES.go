@@ -13,7 +13,7 @@ var StrJsonesES string = `[
         },
         {
             "folder":"/boot",
-            "info":"Archivos cargadores de arranque (por ejemplo, los núcleos, el bootloader).",
+            "info":"Archivos estáticos utilizados por el cargador de arranque (por ejemplo, los núcleos, el bootloader).",
             "description":"possède les éléments indispensables au démarrage de gnu-linux,\n comme le noyau ou la configuration de grub. "
         },
         {
@@ -23,7 +23,7 @@ var StrJsonesES string = `[
         },
         {
             "folder":"/etc",
-            "info":"Contiene archivos de configuración del sistema específicos del Host de todo el sistema.",
+            "info":"Contiene archivos de configuración del sistema, 'específicos del equipo'.",
             "description":" C'est ici que sont stockés les differents fichiers de configuration du système."
         },
         {
@@ -59,16 +59,21 @@ var StrJsonesES string = `[
         {
             "folder":"/proc",
             "info":"Sistema de archivos virtuales que documentan al núcleo y el estado de los procesos.",
-            "description":" - "
+            "description":"Directorio virtual que contiene información del sistema"
         },
         {
             "folder":"/sbin",
-            "info":"Sistema de binarios esencial, comandos y programas exclusivos del superusuario (root).",
+            "info":"Sistema de binarios principales del sistema, comandos y programas exclusivos del superusuario (root).",
             "description":" - "
         },
         {
             "folder":"/srv",
-            "info":"contient les données des services de type serveur.",
+            "info":"Datos de los servicios ofrecidos por el sistema.",
+            "description":" - "
+        },
+        {
+            "folder":"/sys",
+            "info":"Directorio virtual que contiene la información del sistema.",
             "description":" - "
         },
         {
@@ -77,13 +82,13 @@ var StrJsonesES string = `[
             "description":" - "
         },
         {
-            "folder":"/var",
-            "info":"Archivos variables, tales como logs, archivos spool, bases de datos, archivos de correo electrónico temporales.",
+            "folder":"/usr",
+            "info":"Jerarquía secundaria, Contiene la mayoría de las utilidades y aplicaciones multiusuario.",
             "description":" - "
         },
         {
-            "folder":"/usr",
-            "info":"Contiene la mayoría de las utilidades y aplicaciones multiusuario.",
+            "folder":"/var",
+            "info":"Datos variables, tales como logs, archivos spool, bases de datos, archivos de correo electrónico temporales.",
             "description":" - "
         },
         {

@@ -54,16 +54,17 @@ func Debug(blabla string) {
 	fmt.Printf("\n%s", blabla)
 }
 
-// Vérifie que folder est un dossier valide.
+// Checks that 'folder' is a valid folder.
 //
-// Retourne une chaîne vide s'il y a une erreur sur l'existence
-// du dossier demandé.
+// Returns an empty string if there is an error about the existence
+//
+//	of the requested folder.
 func SanitizeQueryFolder(folder string) (string, error) {
 
-	// [ok] Enlève les antislash.
+	// [ok] Remove the backslashes.
 	folder = strings.ReplaceAll(folder, "\\", "")
 
-	// [ok] Teste la chaîne folder.
+	// [ok] Check the string 'folder'.
 	r, err := regexp.Compile(`^(\.{1,2})|(\/)*\/?$`)
 	if err != nil {
 		return "", errors.New(" [!] Nous avons un problème de regexp. ")
@@ -76,7 +77,7 @@ func SanitizeQueryFolder(folder string) (string, error) {
 		return "", errors.New(" [!] Aucun fichier ou dossier de ce type: " + folder)
 	}
 
-	// Teste un 'Directory traversal'.
+	// Check 'Directory traversal'.
 	traversal, err := regexp.Compile(`^((\/?|\.\/)\.{2})\/+`)
 	if err != nil {
 		return "", errors.New(" [!] Nous avons un problème de regexp pour 'Directory traversal'. ")
